@@ -20,24 +20,29 @@ public class Examen {
         // TODO code application logic here
         Scanner teclado = new Scanner(System.in);
         int opc;
-        
+
         do {
             System.out.println("Elegir acción a realizar:\n"
                     + "1.- Cambio de unidades horas a segundos\n"
                     + "2.- Cambio de unidades kilómetros a metros\n"
-                    + "3.- Salir");
+                    + "3.- Cambio de unidades kilómetros a metros\n"
+                    + "4.- Salir");
             opc = teclado.nextInt();
             switch (opc) {
                 case 1:
                     System.out.print("Introduce horas: ");
-                    int s=3600*teclado.nextInt();
-                    
+                    int s = 3600 * teclado.nextInt();
+
                     break;
                 case 2:
                     System.out.print("Introduce kilómetros: ");
-                    int m=1000*teclado.nextInt();
+                    int m = 1000 * teclado.nextInt();
                     break;
                 case 3:
+                    System.out.print("Introduce kilómetros/hora: ");
+                    double kmh = 3.6 * teclado.nextInt();
+                    break;
+                case 4:
                     System.out.println("Has salido");
                     break;
                 default:
