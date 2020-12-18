@@ -25,22 +25,24 @@ public class Examen {
             System.out.println("Elegir acción a realizar:\n"
                     + "1.- Cambio de unidades horas a segundos\n"
                     + "2.- Cambio de unidades kilómetros a metros\n"
-                    + "3.- Cambio de unidades kilómetros a metros\n"
+                    + "3.- Cambio de unidades Km/h a m/s\n"
                     + "4.- Salir");
             opc = teclado.nextInt();
             switch (opc) {
                 case 1:
                     System.out.print("Introduce horas: ");
-                    int s = 3600 * teclado.nextInt();
-
+                    cambio(teclado, 3600);
+                    System.out.println(" segundos");
                     break;
                 case 2:
                     System.out.print("Introduce kilómetros: ");
-                    int m = 1000 * teclado.nextInt();
+                    cambio(teclado, 1000);
+                    System.out.println(" metros");
                     break;
                 case 3:
                     System.out.print("Introduce kilómetros/hora: ");
-                    double kmh = 3.6 * teclado.nextInt();
+                    cambio(teclado, 3.6);
+                    System.out.println(" m/s");
                     break;
                 case 4:
                     System.out.println("Has salido");
@@ -49,6 +51,11 @@ public class Examen {
                     System.out.println("Opcion incorrecta");
             }
         } while (opc != 3);
+    }
+
+    private static void cambio(Scanner teclado, double convert) {
+        double resul = convert * teclado.nextDouble();
+        System.out.printf("Resultado = %,.2f", resul);
     }
 
 }
